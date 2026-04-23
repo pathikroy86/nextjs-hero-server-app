@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "title": "Buy groceries",
+        "description": "Milk, eggs, bread, fruits",
+        "completed": false,
+        "dueDate": "2026-04-24",
+        "priority": "medium"
+    },
+    {
+        "id": 2,
+        "title": "Finish project report",
+        "description": "Complete and submit final report",
+        "completed": false,
+        "dueDate": "2026-04-26",
+        "priority": "high"
+    },
+    {
+        "id": 3,
+        "title": "Morning workout",
+        "description": "30 minutes running and stretching",
+        "completed": true,
+        "dueDate": "2026-04-23",
+        "priority": "low"
+    },
+    {
+        "id": 4,
+        "title": "Read a book",
+        "description": "Read 20 pages of a novel",
+        "completed": false,
+        "dueDate": "2026-04-25",
+        "priority": "low"
+    },
+    {
+        "id": 5,
+        "title": "Team meeting",
+        "description": "Weekly sync with team",
+        "completed": false,
+        "dueDate": "2026-04-24",
+        "priority": "high"
+    },
+    {
+        "id": 6,
+        "title": "Clean room",
+        "description": "Organize desk and clean floor",
+        "completed": true,
+        "dueDate": "2026-04-22",
+        "priority": "medium"
+    },
+    {
+        "id": 7,
+        "title": "Reply emails",
+        "description": "Respond to pending emails",
+        "completed": false,
+        "dueDate": "2026-04-23",
+        "priority": "medium"
+    },
+    {
+        "id": 8,
+        "title": "Practice coding",
+        "description": "Solve 3 JavaScript problems",
+        "completed": false,
+        "dueDate": "2026-04-27",
+        "priority": "high"
+    },
+    {
+        "id": 9,
+        "title": "Call parents",
+        "description": "Catch up with family",
+        "completed": true,
+        "dueDate": "2026-04-21",
+        "priority": "low"
+    },
+    {
+        "id": 10,
+        "title": "Plan weekend trip",
+        "description": "Decide location and budget",
+        "completed": false,
+        "dueDate": "2026-04-28",
+        "priority": "medium"
+    },
+    {
+        "id": 11,
+        "title": "Update portfolio",
+        "description": "Add new projects and improve UI",
+        "completed": false,
+        "dueDate": "2026-04-29",
+        "priority": "high"
+    },
+    {
+        "id": 12,
+        "title": "Watch tutorial",
+        "description": "Learn React advanced concepts",
+        "completed": true,
+        "dueDate": "2026-04-23",
+        "priority": "low"
+    }
+]
