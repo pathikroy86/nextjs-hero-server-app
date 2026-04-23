@@ -1,24 +1,27 @@
 
 'use server'
 
-const normalizeTask = (formData) => {
-    const entries = Object.fromEntries(formData.entries());
-
-    return Object.fromEntries(
-        Object.entries(entries).filter(([key]) => !key.startsWith("$ACTION_"))
-    );
-};
+import { revalidatePath } from "next/cache";
+import { postTask } from "./tasks";
 
 const createPost = async (previousState, formData) => {
-    const task = normalizeTask(formData);
 
-    console.log("Received task:", task);
+    const title = formData.get('title');
+    const description = formData.get('description');
+    const taskComplete = formData.get('taskComplete');
+    const priority = formData.get('priority');
+    const dueDate = formData.get('dueDate');
 
-    return {
-        message: `Received "${task.title}" successfully.`,
-        status: "success",
-        task,
-    };
+    const newTask = Object.fromEntries(formData.entries());
+
+    console.log("Received task:", newTask);
+
+    const res = await postTask(newTask);
+    if (res.ok) {
+        revalidatePath('/tasks');
+    }
+    return res;
+
 };
 
 export default createPost;

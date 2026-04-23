@@ -1,7 +1,7 @@
 "use client";
 
 import { CirclePlus } from "@gravity-ui/icons";
-import { Button, Input, Label, Modal, ModalBackdrop, ModalContainer, ModalDialog, ModalHeader, ModalBody, ModalFooter, ModalCloseTrigger, Surface, TextField } from "@heroui/react";
+import { Button, Input, Label, Modal, ModalBackdrop, ModalContainer, ModalDialog, ModalHeader, ModalBody, ModalFooter, ModalCloseTrigger, Surface, TextField, DateField, ListBox, Select } from "@heroui/react";
 import { useActionState, useRef, useState } from "react";
 
 const initialState = {
@@ -33,10 +33,6 @@ export function AddTask({ createPost }) {
                                 <ModalBody className="p-6">
                                     <Surface variant="default">
                                         <div className="flex flex-col gap-4">
-                                            <TextField className="w-full" name="id" type="text">
-                                                <Label>Task ID</Label>
-                                                <Input name="id" placeholder="Enter task ID" required />
-                                            </TextField>
                                             <TextField className="w-full" name="title" type="text">
                                                 <Label>Title</Label>
                                                 <Input name="title" placeholder="Enter title" required />
@@ -45,18 +41,54 @@ export function AddTask({ createPost }) {
                                                 <Label>Description</Label>
                                                 <Input name="description" placeholder="Enter description" required />
                                             </TextField>
-                                            <TextField className="w-full" name="completed" type="text">
-                                                <Label>Completed</Label>
-                                                <Input name="completed" placeholder="Either true or false" required />
-                                            </TextField>
-                                            <TextField className="w-full" name="dueDate">
-                                                <Label>Due Date</Label>
-                                                <Input name="dueDate" placeholder="Enter the due date" required />
-                                            </TextField>
-                                            <TextField className="w-full" name="priority">
+                                            <Select name="taskComplete" className="w-full" placeholder="Select one">
+                                                <Label>Task Completed</Label>
+                                                <Select.Trigger>
+                                                    <Select.Value />
+                                                    <Select.Indicator />
+                                                </Select.Trigger>
+                                                <Select.Popover>
+                                                    <ListBox>
+                                                        <ListBox.Item id="true" textValue="true">
+                                                            True
+                                                            <ListBox.ItemIndicator />
+                                                        </ListBox.Item>
+                                                        <ListBox.Item id="false" textValue="false">
+                                                            False
+                                                            <ListBox.ItemIndicator />
+                                                        </ListBox.Item>
+                                                    </ListBox>
+                                                </Select.Popover>
+                                            </Select>
+                                            <DateField className="w-full" name="dueDate">
+                                                <Label>Due date</Label>
+                                                <DateField.Group>
+                                                    <DateField.Input>{(segment) => <DateField.Segment segment={segment} />}</DateField.Input>
+                                                </DateField.Group>
+                                            </DateField>
+                                            <Select name="priority" className="w-full" placeholder="Select one">
                                                 <Label>Priority</Label>
-                                                <Input name="priority" placeholder="Give the priority" required />
-                                            </TextField>
+                                                <Select.Trigger>
+                                                    <Select.Value />
+                                                    <Select.Indicator />
+                                                </Select.Trigger>
+                                                <Select.Popover>
+                                                    <ListBox>
+                                                        <ListBox.Item id="low" textValue="low">
+                                                            Low
+                                                            <ListBox.ItemIndicator />
+                                                        </ListBox.Item>
+                                                        <ListBox.Item id="medium" textValue="medium">
+                                                            Medium
+                                                            <ListBox.ItemIndicator />
+                                                        </ListBox.Item>
+                                                        <ListBox.Item id="high" textValue="high">
+                                                            High
+                                                            <ListBox.ItemIndicator />
+                                                        </ListBox.Item>
+                                                    </ListBox>
+                                                </Select.Popover>
+                                            </Select>
                                         </div>
                                     </Surface>
                                 </ModalBody>
